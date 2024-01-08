@@ -19,3 +19,16 @@ Basically data types in JS are classified into two categories :
     2.Arrays
     3.Functions
 */
+
+const a = 12;
+console.log(typeof a) //number 
+
+const b = "s";
+const d = "sir";
+console.log([typeof b , typeof d]);
+
+const e = Symbol("e");
+console.log(typeof e)
+
+//Stack ->Primitive Data type  
+//Heap 

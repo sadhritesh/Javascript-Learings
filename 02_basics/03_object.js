@@ -45,3 +45,21 @@ console.log(obj3);
 
 
 */
+
+
+// ✅De-structuring of objects : 
+
+let user = {
+    firstName : "ritesh sadh",
+    companyName : "Google",
+    empId : 141,
+    age : 22 
+};
+
+// let {firstName, companyName} = user 
+
+// console.log(firstName,companyName); ritesh sadh Google
+
+
+// let {firstName: name, companyName: cName} = user;
+// console.log(name, cName);  ritesh sadh Google

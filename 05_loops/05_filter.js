@@ -1,4 +1,4 @@
-// ✅ filter(callbackFun);
+// ✅ filter(callbackFun); filter is used to create a new array with elements that meet a certain condition,
 //ye callbackfun array ke elements ko one by one as an paramet. leta he and us pr kuch condtion apply krta, yadi condtion true hoti he to item ko return krdeta he
 
 const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];

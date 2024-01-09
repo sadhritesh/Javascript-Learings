@@ -1,0 +1,3 @@
+// ✅DOM : DOM stands for Document Object Model , represents the structure of a document as a tree of objects.In the context of web development, the document usually refers to an HTML or XML document, and the objects represent the various elements and components within that document.
+//✅ Elements, attributes, and text content are represented as objects in the DOM. These objects are organized into a hierarchy of nodes. The main types of nodes include document nodes, element nodes, attribute nodes, and text nodes.
+// ✅https://www.researchgate.net/publication/254002847/figure/fig1/AS:298235726974978@1448116346303/Example-of-DOM-Node-Tree.png

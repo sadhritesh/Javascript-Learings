@@ -48,6 +48,7 @@ console.log(obj3);
 
 
 // ✅De-structuring of objects : 
+// Destructuring assignment is a feature in some programming languages that allows you to extract values from arrays or objects and assign them to variables in a more concise and convenient way 
 
 let user = {
     firstName : "ritesh sadh",

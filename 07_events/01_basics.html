@@ -1,0 +1,43 @@
+<!-- ✅ DOM events are actions that occur as a result of the user action or as result of state chnage of the elements of a DOM tree. -->
+
+<!-- ✅Adding and removing event Listener -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+<body>
+    <button class="btn"> Click me !</button>
+</body>
+<script>
+    /*
+    // only second onclick will work -------------------
+
+    let elm = document.querySelector('.btn')
+    elm.onclick = function(){
+        console.log("Clicked-1 !!");
+    }
+    elm.onclick = function(){
+        console.log("Clicked-2 !!");
+    }
+    */
+
+    //here both event will work 
+
+    let elm = document.querySelector('.btn')
+    elm.addEventListener('click',clickHandler1);
+    elm.addEventListener('click',clickHandler2);
+
+    elm.removeEventListener('click',clickHandler2);
+
+    function clickHandler1(event){
+        console.log("click1");
+    }
+    function clickHandler2(event){
+        console.log("click2");
+    }
+
+</script>
+</html>

@@ -1,0 +1,32 @@
+<!-- ✅Browser Object Model is used to interact with Browser. And The window object is the top-level object in the BOM hierarchy, and it represents the browser window or tab.
+A window object is created automatically byt the browswer.
+
+✅all global js objects, functions, and variables with the var keyword automatically become members of the window object.
+✅Global variable are properties of the window object.
+✅Global functions are methods of the window objects.
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOM</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //variable created with var is global variable while created with let and cosnt are not 
+
+    var a = 10;
+    console.log(window.a); // 10
+
+    function greet(){
+        console.log("Namaste Sir !!");
+    }
+
+    window.greet(); //Namaste Sir !!
+</script>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Traversing through the DOM</title>
+</head>
+<body>
+    <ul>
+        <li class="li">List Item</li>
+        <li>List Item</li>
+        <li>List Item</li>
+        <li>List Item</li>
+    </ul>
+
+    <ul id="ul-2">
+        <li>List item 1</li>
+        <li>List item 2</li>
+        <li>List item 3</li>
+        <li>List item 4</li>
+    </ul>
+</body>
+
+<script>
+    //✅Selecting parentNode from childNode 
+
+    // let elm = document.querySelector('.li')
+    // let ul = elm.parentNode; 
+    // console.log(ul);
+
+    //✅Selecting childNode from parentNode 
+
+    // let elm = document.querySelector('#ul-2');
+    // let fChild = elm.firstElementChild
+    // let lChild = elm.lastChild
+    // console.log(fChild);
+
+    //✅sibling - next and previous siblings 
+
+    let elm = document.getElementsByClassName('li')[0];
+    let nextSib = elm.nextElementSibling;
+    console.log(nextSib);
+
+
+    let elm2 = document.getElementById('ul-2');
+    let prevSib = elm2.previousElementSibling;
+    console.log(prevSib);
+</script>
+</html>

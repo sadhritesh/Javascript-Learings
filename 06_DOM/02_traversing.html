@@ -6,14 +6,14 @@
     <title>Traversing through the DOM</title>
 </head>
 <body>
-    <ul>
-        <li class="li">List Item</li>
+    <ul class="li">
+        <li >List Item</li>
         <li>List Item</li>
         <li>List Item</li>
         <li>List Item</li>
     </ul>
 
-    <ul id="ul-2">
+    <ul class="li">
         <li>List item 1</li>
         <li>List item 2</li>
         <li>List item 3</li>
@@ -37,13 +37,16 @@
 
     //✅sibling - next and previous siblings 
 
-    let elm = document.getElementsByClassName('li')[0];
-    let nextSib = elm.nextElementSibling;
-    console.log(nextSib);
+    // let elm = document.getElementsByClassName('li')[0];
+    // let nextSib = elm.nextElementSibling;
+    // console.log(nextSib);
 
 
-    let elm2 = document.getElementById('ul-2');
-    let prevSib = elm2.previousElementSibling;
-    console.log(prevSib);
+    // let elm2 = document.getElementById('ul-2');
+    // let prevSib = elm2.previousElementSibling;
+    // console.log(prevSib);
+
+    let liItems = document.getElementsByClassName('li');
+    console.log(liItems);
 </script>
 </html>

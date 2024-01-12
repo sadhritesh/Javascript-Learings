@@ -1,0 +1,46 @@
+<script>
+    /*
+    ✅JSON - Javascript Object Notations 
+     -> JSON is a text format for storing and transporting data
+     -> it is derived from JS object syntax
+     -> Data is in name/value pairs 
+     -> Data is separated by commas 
+     -> Square brackets hold arrays
+     
+    Note : server return data in JSON string format
+    */
+
+   //✅JSON.parse(json_data) - is used to convert json data to javascript object
+
+    /*
+    let json_data = `
+            {
+            "name": "Ritesh Sadh",
+            "age": 21, 
+            "is_student": true,
+            "passport_no": null,
+            "p_lang": ["javascript", "python", "c#"],
+            "address":{
+                "city": "Bhopal",
+                "state": "Madhya Pradesh",
+                "pincode": 461223
+            }
+        }`;
+
+    let js_object = JSON.parse(json_data);
+
+    console.log(js_object.name); //RItesh Sadh
+    */
+
+    //JSON.stringify(js_object) -> convert js object into json string
+
+   let js_object = {
+           name : "Ritesh Sadh",
+           age : 21, 
+           city : "Bhopal"
+   }
+
+   let json_data = JSON.stringify(js_object)
+
+   console.log(typeof json_data); //string
+</script>

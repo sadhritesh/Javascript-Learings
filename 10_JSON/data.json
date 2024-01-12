@@ -1,0 +1,12 @@
+{
+    "name": "Ritesh Sadh",
+    "age": 21, 
+    "is_student": true,
+    "passport_no": null,
+    "p_lang": ["javascript", "python", "c#"],
+    "address":{
+        "city": "Bhopal",
+        "state": "Madhya Pradesh",
+        "pincode": 461223
+    }
+}

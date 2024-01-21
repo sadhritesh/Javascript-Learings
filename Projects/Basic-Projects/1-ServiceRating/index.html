@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rating System</title>
+</head>
+<body>
+    <h2 id="heading">Please rate our services :</h2>
+    <div id="main">
+        <label for="very poor">
+            <input type="radio" value="Very Poor" name="radio" id="verypoor">Very Poor
+        </label>
+        <label for="poor">
+            <input type="radio" value="Poor" name="radio" id="poor">Poor
+        </label>
+        <label for="average">
+            <input type="radio" value="Average" name="radio" id="average">Average
+        </label>
+        <label for="good">
+            <input type="radio" value="Good" name="radio" id="good">Good
+        </label>
+        <label for="very good">
+            <input type="radio" value="Very Good" name="radio" id="verygood">Very Good
+        </label>
+    </div>
+    <div>
+        <button id="btn" style="margin-top: 20px;">Submit</button>
+        <p id="output"></p>
+    </div>
+</body>
+<script>
+    let btn = document.getElementById('btn');
+    let output = document.getElementById('output');
+    let heading = document.getElementById('heading');
+    let main = document.getElementById('main');
+
+    let ratings = document.getElementsByName('radio');
+
+    btn.addEventListener('click',(details)=>{
+        ratings.forEach((rating)=>{
+            if (rating.checked){
+                output.innerHTML = `Your rating: ${rating.value}`;
+                setTimeout(getFeedback(rating.value),1000);
+            }
+        })
+    })
+
+    function getFeedback(r){
+    
+        if (r == "Very Poor" || r == "Poor" || r == "Average"){
+            heading.innerHTML = `How our servic can be good?`;
+            main.innerHTML = `
+            <p>Write Your Feedback :</p>
+            <textarea id="feedBak" rows="4" cols="50"></textarea>
+            <br>
+            <p style="color:red; display:none">Please write something... !!</p>
+            <input id="fSubmit" type="submit" value="Submit">
+            <input id="fSkip" type="submit" value="Skip">
+            `;
+            main.nextElementSibling.style.display = `none`;
+
+            document.getElementById('fSubmit').addEventListener('click', () => {
+                if (isNonEmpty()) showMessage();
+            });
+            document.getElementById('fSkip').addEventListener('click',showMessage);
+        
+        }else{
+            showMessage();
+        }
+    
+    }
+
+    function isNonEmpty(){
+        let feedbackArea = document.getElementById('feedBak');
+        let feedbackSize = feedbackArea.value.trim().length;
+
+        if (!feedbackSize){
+            feedbackArea.nextElementSibling.nextElementSibling.style.display = 'block';
+
+            feedbackArea.addEventListener('focus',()=>{
+                feedbackArea.nextElementSibling.nextElementSibling.style.display = 'none';
+            })
+        }else{
+            return true;
+        }
+       
+    }
+
+    function showMessage(){
+        main.style.display = `none`;
+        heading.innerHTML = `Thank You, Visit again !!`;
+        main.nextElementSibling.style.display = `none`;
+    }
+
+
+</script>
+</html>

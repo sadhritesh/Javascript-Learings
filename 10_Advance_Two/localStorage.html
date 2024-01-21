@@ -1,0 +1,40 @@
+<script>
+    /*
+    //Save data to local storage 
+    localStorage.setItem('name1','Ritesh Sadh');
+    localStorage.setItem('name2','Sarvesh Sadh');
+
+    //Get data from local storage
+    console.log(localStorage.getItem('name1')); //Ritesh Sadh
+
+    //remove data from local storage
+    localStorage.removeItem('[object Object]');
+
+    //store obj 
+    let users = {
+        user1 : {
+            name: 'Ritesh Sadh',
+            age : 21
+        },
+        user2: {
+            name: 'Sarvesh Sadh',
+            age : 18
+        }
+    }
+
+    let usersJSON = JSON.stringify(users);
+
+    localStorage.setItem('users', usersJSON);
+
+    */
+
+    let users = localStorage.getItem('users');
+    let usersObj = JSON.parse(users);
+
+
+    console.log(usersObj.user1.name);//Ritesh Sadh
+
+    console.log(localStorage.length);
+
+    localStorage.clear();
+</script>

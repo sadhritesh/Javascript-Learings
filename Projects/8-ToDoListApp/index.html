@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/96138bc645.js" crossorigin="anonymous"></script>
+</head>
+<style>
+    *{
+        padding: 0px;
+        margin: 0px;
+        box-sizing: border-box;
+    }
+    body{
+        background-color: #89CFF0;
+    }
+    .container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* margin-top: 8%; */
+    }
+    .todoheading{
+        font-size: 33px;
+        margin-bottom: 30px;
+        margin-top: 100px;
+    }
+    .todo{
+        background-color: white;
+        /* height: 400px; */
+        width: 500px;
+        border-radius: 5px;
+    }
+    .todo-input{
+        border: 1px solid black;
+        display: flex;
+        justify-content: center;
+        margin:auto;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        width: 80%;
+        position: relative;
+
+    }
+    .todo-input input{
+        height: 50px;
+        width: 100%;
+        border: none;
+        padding: 20px;
+        font-size: 20px;
+    }
+    .todo-input i{
+        font-size: 30px;
+        margin: auto;
+        position: absolute;
+        right: 20px;
+        top: 10px;
+        cursor: pointer;
+    }
+    .todo-navbar{
+        border-bottom: 1px solid black;
+    }
+    .todo-navbar ul {
+        list-style: none;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        font-size: 15px;
+        padding: 10px;
+    }
+    .todo-navbar ul li{
+        cursor: pointer;
+    }
+    #clear{
+        padding: 5px;
+        cursor: pointer;
+    }
+    .item{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        padding: 20px 0px;
+        width: 75%;
+        border-bottom: 1px solid black;
+    }
+    .setting i{
+        margin: 0px 5px;
+        font-size: 20px;
+    }
+    .edit{
+        color: green;
+    }
+    .delete{
+        color: red;
+    }
+    .todo-header{
+        position: relative;
+    }
+    #message{
+        position: absolute;
+        left: 10%;
+        bottom: 33%;
+    }
+</style>
+<body>
+    <div class="container">
+        <h2 class="todoheading">To Do App Using Javascript</h2>
+        <div class="todo">
+            <div class="todo-header">
+                <div class="todo-input">
+                    <input type="text" placeholder="New task ..." id="inputBox">
+                    <i class="far fa-save" id="saveBtn"></i>
+                </div>
+                <p id="message"></p>
+                <div class="todo-navbar">
+                    <ul>
+                        <li>All</li>
+                        <li>To-Do</li>
+                        <li>In-Progress</li>
+                        <li>Closed</li>
+                        <li><Button id="clear">Clear All</Button></li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <div class="todo-items" id="todo-container">
+
+            </div>
+
+
+        </div>
+    </div>
+</body>
+<script src="index.js"></script>
+</html>

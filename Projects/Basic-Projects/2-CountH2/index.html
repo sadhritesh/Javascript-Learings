@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript getElementsByTagName() Demo</title>
+</head>
+<body>
+    <h1>JavaScript getElementsByTagName() Demo</h1>
+    <h2>First heading</h2>
+    <p>This is the first paragraph.</p>
+    <h2>Second heading</h2>
+    <p>This is the second paragraph.</p>
+    <h2>Third heading</h2>
+    <p>This is the third paragraph.</p>
+    <h2>Fourth heading</h2>
+    <p>This is the Fourth paragraph.</p>
+    <h2>Fifth heading</h2>
+    <p>This is the Fifth paragraph.</p>
+    <h2>Sixth heading</h2>
+    <p>This is the Sixth paragraph.</p>
+
+    <button id="btnCount">Count H2</button>
+</body>
+    <script>
+        let h2List  = document.getElementsByTagName('h2');
+        let btn = document.getElementById('btnCount')
+
+        btn.addEventListener('click',() => alert(`Number of H2: ${h2List.length}`))
+    </script>
+</html>

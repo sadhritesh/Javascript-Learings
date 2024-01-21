@@ -1,5 +1,11 @@
 let taskList = []
-showTaskList();
+let isTaskPresent = localStorage.getItem('taskList');
+if (isTaskPresent !== null){
+    taskList = JSON.parse(isTaskPresent);
+    showTaskList();
+}
+
+let tId = null;
 
 document.getElementById('saveBtn').addEventListener('click',saveData);
 
@@ -7,16 +13,27 @@ function saveData(){
     let inputBox = document.getElementById('inputBox');
     let task = inputBox.value.trim();
 
-    if (task){
+    if (task && tId == null){
+        //add
         let data = {
             taskName : `${task}`,
             taskId : taskList.length + 1
         }
         taskList.push(data);
+        localStorage.setItem('taskList', JSON.stringify(taskList));
         showTaskList();
         showMessage('green','Task Added !!');
         inputBox.value = '';
-    }else{
+    }else if(task && tId != null){
+        //edit
+        let editIndex = taskList.findIndex((elm)=> tId == elm.taskId)
+        taskList[editIndex].taskName = inputBox.value;
+        localStorage.setItem('taskList', JSON.stringify(taskList));
+        showTaskList();
+        showMessage('green','Task Updated !!');
+        tId = null;
+
+    } else{
         showMessage('red', 'Please write something !!');
     }   
 }
@@ -29,7 +46,7 @@ function showMessage(color, message){
 
     setTimeout(function(){
         messageField.innerHTML = '';
-    },2000)
+    },1000)
 
 }
 
@@ -84,7 +101,7 @@ function editTask(details){
 
     inputBox.value = oldTask[0].taskName;
 
-    deleteTask(details);
+    tId = taskId;
 }
 
 
@@ -93,5 +110,7 @@ function deleteTask(details){
     let updatedTaskList = taskList.filter(elm => elm.taskId != id )
 
     taskList = updatedTaskList;
+    localStorage.setItem('taskList', JSON.stringify(taskList));
+    showMessage('red','Task Deleted !!');
     showTaskList();
 }

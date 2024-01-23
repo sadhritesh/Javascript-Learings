@@ -8,7 +8,9 @@ if (isTaskPresent !== null){
 let tId = null;
 
 document.getElementById('saveBtn').addEventListener('click',saveData);
-
+document.getElementById('inputBox').addEventListener('keypress',(details)=>{
+    if (details.key == "Enter") saveData();
+})
 function saveData(){
     let inputBox = document.getElementById('inputBox');
     let task = inputBox.value.trim();
